@@ -3,9 +3,12 @@ const cors = require('cors');
 
 const app = express();
 
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+// var server = require('http').createServer(app);
+// var io = require('socket.io')(server);
 
+//for client
+var io = require('socket.io-client');
+var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000/', {reconnect: true});
 
 app.enable('trust proxy');
 
@@ -34,16 +37,21 @@ app.get("/events", (req, res) => {
     })
 });
 
-server.listen(3000, () => {
+app.listen(3000, () => {
     console.log("server is runing on 3000 port")
 })
 
 
 
+// Add a connect listener
+socket.on('up', function (socket) {
+    console.log('Connected!');
+    console.log("mydata ",socket)
+});
 
-io.on("connection",(socket)=>{
-    console.log("User connected ",socket.id);
-    socket.on("up",(data)=>{
-        console.log("socket message ",data);
-    })
-})
+// io.on("connection",(socket)=>{
+//     console.log("User connected ",socket.id);
+//     socket.on("up",(data)=>{
+//         console.log("socket message ",data);
+//     })
+// })
