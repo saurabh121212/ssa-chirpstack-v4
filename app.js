@@ -1,10 +1,11 @@
 const express = require("express");
 const cors = require('cors');
-const io = require('socket.io');
 
 const app = express();
 app.enable('trust proxy');
 
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 //Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
@@ -35,6 +36,7 @@ app.get("/events", (req, res) => {
 app.listen(3000, () => {
     console.log("server is runing on 3000 port")
 })
+
 
 
 io.on("connection",(socket)=>{
