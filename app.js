@@ -27,9 +27,16 @@ cors()
 );
 
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-  });
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html');
+//   });
+
+
+app.get("/", (req, res) => {
+    res.status(200).json({
+        result:"data "
+    })
+});
 
 app.get("/events", (req, res) => {
     res.status(200).json({
