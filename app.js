@@ -36,3 +36,11 @@ app.listen(3000, () => {
     console.log("server is runing on 3000 port")
 })
 
+
+io.on("connection",(socket)=>{
+    console.log("User connected ",socket.id);
+
+    socket.on("up",(data)=>{
+        console.log("socket message ",data);
+    })
+})
