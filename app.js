@@ -8,7 +8,7 @@ const app = express();
 
 //for client
 var io = require('socket.io-client');
-var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:8080/', {reconnect: true,  reconnectionDelay: 10000});
+var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000/', {reconnect: true,  reconnectionDelay: 10000});
 
 app.enable('trust proxy');
 

@@ -24,6 +24,28 @@
     <!-- <script src="/socket.io/socket.io.js"></script>
     <script>
     var socket = io(); -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  socket.on('up', function (socket) {
+    console.log('Connected!');
+    console.log("mydata ",socket)
+});
+
+
+//   var form = document.getElementById('form');
+//   var input = document.getElementById('input');
+
+//   form.addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     if (input.value) {
+//       socket.emit('chat message', input.value);
+//       input.value = '';
+//     }
+//   });
+</script>
     </script>
   </body>
 </html>
