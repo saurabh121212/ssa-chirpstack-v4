@@ -21,14 +21,14 @@ cors()
 );
 
 app.get("/", (req, res) => {
-    res.sendStatus(200).json({
+    res.status(200).json({
         result:"Done"
     })
 });
 
 app.get("/events", (req, res) => {
-    res.sendStatus(200).json({
-        result:"Done"
+    res.status(200).json({
+        result:"events service"
     })
 });
 
