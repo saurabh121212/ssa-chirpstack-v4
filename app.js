@@ -11,9 +11,9 @@ var io = require('socket.io-client');
 // var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000',
 // {reconnect: true,  reconnectionDelay: 10000});
 
-// var socket = io.connect();
+var socket = io.connect();
 
-// app.enable('trust proxy');
+app.enable('trust proxy');
 
 //Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
