@@ -36,7 +36,8 @@ cors()
 //   });
 
 
-app.get("/", (req, res) => {
+app.get("", (req, res) => {
+    console.log("mytest ",req.body);
     res.status(200).json({
         result:"data "
     })
