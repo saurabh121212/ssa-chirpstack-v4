@@ -50,7 +50,8 @@ app.get("/", (req, res) => {
     console.log("payload data value ",global.payloadData.data)
 
   var b64string = global.payloadData.data;
-  var buf = Buffer.from(b64string, 'base64'); // Ta-da
+  var buf = Buffer.from(b64string, 'base64').toString('utf-8'); // Ta-da
+
 
     res.status(200).json({
         result:"payload Data",
