@@ -53,7 +53,7 @@ app.listen(3000, () => {
 })
 
 
-socket.on('connect', (data) => {
+socket.on('connection', (data) => {
     console.log('Connected to Socket');
 });
 
@@ -63,9 +63,9 @@ socket.on('up', function (socket) {
     console.log("mydata ",socket)
 });
 
-io.on("connection",(socket)=>{
-    console.log("User connected ",socket.id);
-    socket.on("up",(data)=>{
-        console.log("socket message ",data);
-    })
-})
+// io.on("connection",(socket)=>{
+//     console.log("User connected ",socket.id);
+//     socket.on("up",(data)=>{
+//         console.log("socket message ",data);
+//     })
+// })
