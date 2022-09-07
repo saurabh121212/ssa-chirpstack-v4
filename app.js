@@ -23,12 +23,11 @@ app.use(express.static(__dirname));
 
 app.use((req, res, next) => {
 	console.log("query:", req.query);
-  console.log("body:", req.body);
+    console.log("body:", req.body);
 	next();
 },
 cors()
 );
-
 
 
 // app.get('/', (req, res) => {
