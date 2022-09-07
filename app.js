@@ -43,10 +43,10 @@ cors()
 
 app.get("/", (req, res) => {
     console.log("myapi")
-    console.log("02 payloadData ",global.payloadData)
+    console.log("02 payloadData ",payloadData)
     res.status(200).json({
         result:"data ",
-        data:global.payloadData
+        data:payloadData
     })
 });
 
