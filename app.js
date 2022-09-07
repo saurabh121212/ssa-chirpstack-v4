@@ -53,19 +53,19 @@ app.listen(3000, () => {
 })
 
 
-// socket.on('connect', (data) => {
-//     console.log('Connected to Socket');
-// });
+socket.on('connect', (data) => {
+    console.log('Connected to Socket');
+});
 
-// // Add a connect listener
-// socket.on('up', function (socket) {
-//     console.log('Connected!');
-//     console.log("mydata ",socket)
-// });
+// Add a connect listener
+socket.on('up', function (socket) {
+    console.log('Connected!');
+    console.log("mydata ",socket)
+});
 
-// io.on("connection",(socket)=>{
-//     console.log("User connected ",socket.id);
-//     socket.on("up",(data)=>{
-//         console.log("socket message ",data);
-//     })
-// })
+io.on("connection",(socket)=>{
+    console.log("User connected ",socket.id);
+    socket.on("up",(data)=>{
+        console.log("socket message ",data);
+    })
+})
