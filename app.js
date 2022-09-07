@@ -6,12 +6,12 @@ const app = express();
 // var server = require('http').createServer(app);
 // var io = require('socket.io')(server);
 
-//for client
-var io = require('socket.io-client');
-// var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000',
-// {reconnect: true,  reconnectionDelay: 10000});
+// //for client
+// var io = require('socket.io-client');
+// // var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000',
+// // {reconnect: true,  reconnectionDelay: 10000});
 
-var socket = io.connect();
+// var socket = io.connect();
 
 app.enable('trust proxy');
 
@@ -53,15 +53,15 @@ app.listen(3000, () => {
 })
 
 
-socket.on('connection', (data) => {
-    console.log('Connected to Socket');
-});
+// socket.on('connection', (data) => {
+//     console.log('Connected to Socket');
+// });
 
-// Add a connect listener
-socket.on('up', function (socket) {
-    console.log('Connected!');
-    console.log("mydata ",socket)
-});
+// // Add a connect listener
+// socket.on('up', function (socket) {
+//     console.log('Connected!');
+//     console.log("mydata ",socket)
+// });
 
 // io.on("connection",(socket)=>{
 //     console.log("User connected ",socket.id);
