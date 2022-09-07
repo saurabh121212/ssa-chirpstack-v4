@@ -11,9 +11,9 @@ var io = require('socket.io-client');
 // var socket = io.connect('http://ec2-3-110-220-190.ap-south-1.compute.amazonaws.com:3000',
 // {reconnect: true,  reconnectionDelay: 10000});
 
-var socket = io.connect();
+// var socket = io.connect();
 
-app.enable('trust proxy');
+// app.enable('trust proxy');
 
 //Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
@@ -53,15 +53,15 @@ app.listen(3000, () => {
 })
 
 
-socket.on('connect', (data) => {
-    console.log('Connected to Socket');
-});
+// socket.on('connect', (data) => {
+//     console.log('Connected to Socket');
+// });
 
-// Add a connect listener
-socket.on('up', function (socket) {
-    console.log('Connected!');
-    console.log("mydata ",socket)
-});
+// // Add a connect listener
+// socket.on('up', function (socket) {
+//     console.log('Connected!');
+//     console.log("mydata ",socket)
+// });
 
 // io.on("connection",(socket)=>{
 //     console.log("User connected ",socket.id);
