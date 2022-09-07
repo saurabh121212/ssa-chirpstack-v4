@@ -47,11 +47,15 @@ cors()
 
 
 app.get("/", (req, res) => {
-    console.log("myapi")
-    console.log("02 payloadData ",global.payloadData)
+    console.log("payload data value ",global.payloadData.data)
+
+  var b64string = global.payloadData.data;
+  var buf = Buffer.from(b64string, 'base64'); // Ta-da
+
     res.status(200).json({
-        result:"data ",
-        data:global.payloadData
+        result:"payload Data",
+        data:global.payloadData,
+        decodeValue:buf
     })
 });
 
