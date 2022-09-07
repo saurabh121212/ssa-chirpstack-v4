@@ -21,14 +21,12 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 app.use(express.static(__dirname));
 
-var payloadData = null;
+var payloadData = {};
 
 app.use((req, res, next) => {
 	console.log("query testing :", req.query);
     console.log("body testing :", req.body);
-
     payloadData = req.body;
-
 	next();
 },
 cors()
