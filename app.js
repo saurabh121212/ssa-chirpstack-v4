@@ -26,7 +26,7 @@ global.payloadData = {};
 app.use((req, res, next) => {
 	console.log("query testing :", req.query);
     console.log("body testing :", req.body);
-    if( req.body != null || req.body.length !== 0)
+    if( req.body != null || Object.keys(req.body).length !== 0)
     {
     console.log("inside")
     global.payloadData = req.body;
