@@ -26,10 +26,11 @@ global.payloadData = {};
 app.use((req, res, next) => {
 	console.log("query testing :", req.query);
     console.log("body testing :", req.body);
+    if( req.body != null)
+    {
     global.payloadData = req.body;
-
     console.log("01 payload ",global.payloadData)
-
+    }
 	next();
 },
 cors()
@@ -43,10 +44,10 @@ cors()
 
 app.get("/", (req, res) => {
     console.log("myapi")
-    console.log("02 payloadData ",payloadData)
+    console.log("02 payloadData ",global.payloadData)
     res.status(200).json({
         result:"data ",
-        data:payloadData
+        data:global.payloadData
     })
 });
 
