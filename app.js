@@ -21,13 +21,18 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 app.use(express.static(__dirname));
 
-// app.use((req, res, next) => {
-// 	console.log("query testing :", req.query);
-//     console.log("body testing :", req.body);
-// 	next();
-// },
-// cors()
-// );
+var payloadData = null;
+
+app.use((req, res, next) => {
+	console.log("query testing :", req.query);
+    console.log("body testing :", req.body);
+
+    payloadData = req.body;
+
+	next();
+},
+cors()
+);
 
 
 // app.get('/', (req, res) => {
@@ -35,11 +40,12 @@ app.use(express.static(__dirname));
 //   });
 
 
-app.get((req, res) => {
+app.get("/", (req, res) => {
     console.log("myapi")
-    console.log("mytest ",req.body);
+    console.log("payloadData ",payloadData)
     res.status(200).json({
-        result:"data "
+        result:"data ",
+        data:payloadData
     })
 });
 
