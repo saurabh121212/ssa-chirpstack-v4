@@ -21,13 +21,13 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 app.use(express.static(__dirname));
 
-app.use((req, res, next) => {
-	console.log("query testing :", req.query);
-    console.log("body testing :", req.body);
-	next();
-},
-cors()
-);
+// app.use((req, res, next) => {
+// 	console.log("query testing :", req.query);
+//     console.log("body testing :", req.body);
+// 	next();
+// },
+// cors()
+// );
 
 
 // app.get('/', (req, res) => {
@@ -35,7 +35,7 @@ cors()
 //   });
 
 
-app.get("", (req, res) => {
+app.get((req, res) => {
     console.log("myapi")
     console.log("mytest ",req.body);
     res.status(200).json({
