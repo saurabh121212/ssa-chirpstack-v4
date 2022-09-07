@@ -51,8 +51,9 @@ app.get("/events", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("server is runing on 3000 port")
+    console.log("server is runing on 30002 port")
 })
+
 
 
 // socket.on('connection', (data) => {
